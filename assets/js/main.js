@@ -87,7 +87,7 @@ function saveTask(hour, text) {
     tasks = JSON.parse(localStorage.getItem("tasks"));
     
     // if a previous entry for the timeblock exists, update the task description
-    let j = tasks.findIndex((tasks) => tasks.time === hour);
+    let j = tasks.findIndex((myTask) => myTask.time === hour);
     if (j>=0) {
       tasks[j].description = text;
       localStorage.setItem("tasks", JSON.stringify(tasks));
